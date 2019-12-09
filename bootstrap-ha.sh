@@ -102,7 +102,7 @@ importkey () {
         exit 1
         ;;
     esac
-    if ! ps -a | grep ssh-agent > /dev/null 2>&1
+    if ! ssh-add -L > /dev/null 2>&1
       then
           echo "[Error] $_scope | Looks like the ssh-agent isn't running, please make sure it's running and ssh-add your private SSH key"
           exit 1
